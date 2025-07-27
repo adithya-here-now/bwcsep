@@ -10,3 +10,12 @@ urlpatterns = [
     path('upload/', views.dashboard, name='upload_pdf'),  # You already handle upload in dashboard
     path('list/', views.dashboard, name='pdf_list'),  # Same view — adjust if needed
 ]
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("<h1>Welcome to BWC PDF Separator App 🎉</h1><p>Upload your PDF at /upload</p>")
+
+urlpatterns += [
+    path('', home),
+]
